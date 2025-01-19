@@ -15,7 +15,8 @@ spring:
     properties:
       hibernate:
         globally_quoted_identifiers: false
-        physical_naming_strategy: org.springframework.boot.orm.jpa.hibernate.SpringPhysicalNamingStrategy
+        naming:
+          physical-strategy: org.springframework.boot.orm.jpa.hibernate.SpringPhysicalNamingStrategy
         show-sql: true
     hibernate:
       ddl-auto: none
