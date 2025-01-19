@@ -14,7 +14,8 @@ import java.util.stream.Collectors;
 public class House {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    @Column(name = "house_id")
+    private Long Id;
 
     @Column(nullable = false)
     private String name;

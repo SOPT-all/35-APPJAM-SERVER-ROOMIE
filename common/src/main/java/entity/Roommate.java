@@ -9,6 +9,7 @@ import lombok.Data;
 public class Roommate {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "roommate_id")
     private Long id;
 
     private int age;

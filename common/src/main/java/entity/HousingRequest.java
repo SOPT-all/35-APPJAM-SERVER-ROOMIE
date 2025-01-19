@@ -14,6 +14,7 @@ import java.time.LocalDateTime;
 public class HousingRequest {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "request_id")
     private Long id;
 
     @Column(nullable = false)
