@@ -20,10 +20,10 @@ public interface UserRepository extends JpaRepository<User, Long> {
 //			"WHERE u.id = :userId")
 //	Optional<User> findByIdWithHousesAndRooms(@Param("userId") Long userId);
 
-	@Query("SELECT u FROM User u LEFT JOIN FETCH u.recentlyViewedHouses rvh WHERE u.id = :userId")
+	@Query("SELECT u FROM User u LEFT JOIN FETCH u.recentlyViewedHouses rvh WHERE u.userId = :userId")
 	Optional<User> findUserWithRecentlyViewedHouses(@Param("userId") Long userId);
 
 
-	@Query("SELECT u.location FROM User u WHERE u.id = :userId")
+	@Query("SELECT u.location FROM User u WHERE u.userId = :userId")
 	Optional<String> findLocationById(@Param("userId") Long userId);
 }
