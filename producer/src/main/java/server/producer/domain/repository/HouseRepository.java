@@ -16,17 +16,17 @@ public interface HouseRepository extends JpaRepository<House, Long> {
 
     @Query("SELECT h FROM House h " +
             "LEFT JOIN FETCH h.rooms r " +
-            "WHERE h.Id = :houseId")
+            "WHERE h.id = :houseId")
     Optional<House> findHouseWithRoomsById(@Param("houseId") Long houseId);
 
     @Query("SELECT r FROM Room r " +
             "LEFT JOIN FETCH r.roommates " +
-            "WHERE r.house.Id = :houseId")
+            "WHERE r.house.id = :houseId")
     List<Room> findRoomsAndRoommatesByHouseId(@Param("houseId") Long houseId);
 
     @Query("SELECT h FROM House h " +
             "LEFT JOIN FETCH h.pins p " +
-            "WHERE h.Id = :houseId")
+            "WHERE h.id = :houseId")
     Optional<House> findHouseWithPinsById(@Param("houseId") Long houseId);
 
     @Query("SELECT h FROM House h " +
@@ -39,7 +39,7 @@ public interface HouseRepository extends JpaRepository<House, Long> {
 
     Optional<House> findById(Long id);
 
-    @Query("SELECT r FROM Room r WHERE r.house.Id = :houseId")
+    @Query("SELECT r FROM Room r WHERE r.house.id = :houseId")
     List<Room> findAllRoomsByHouseId(@Param("houseId") Long houseId);
 
 }
