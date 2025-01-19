@@ -9,8 +9,8 @@ import lombok.Data;
 public class Roommate {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "roommate_id")
-    private Long id;
+    @Column(name = "roommate_id", nullable = false)
+    private Long roommateId;
 
     private int age;
     private String job;
