@@ -15,6 +15,10 @@ spring:
     properties:
       hibernate:
         globally_quoted_identifiers: false
+        physical_naming_strategy: org.springframework.boot.orm.jpa.hibernate.SpringPhysicalNamingStrategy
+        show-sql: true
+    hibernate:
+      ddl-auto: none
   logging:
     level:
       org:
@@ -28,9 +32,6 @@ spring:
     url: ${SPRING_DATASOURCE_URL:jdbc:h2:mem:testdb}
     username: ${SPRING_DATASOURCE_USERNAME}
     password: ${SPRING_DATASOURCE_PASSWORD}
-    hibernate:
-      ddl-auto: update
-    show-sql: true
   h2:
     console:
       enabled: true
