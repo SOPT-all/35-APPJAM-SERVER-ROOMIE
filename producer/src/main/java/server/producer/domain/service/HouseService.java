@@ -29,7 +29,7 @@ public class HouseService {
 		List<House> pinnedHouses = houseRepository.findPinnedHouseByUserId(userId);
 		List<PinnedListResponseDto.PinnedHouseDto> pinnedHouseDtos = pinnedHouses.stream()
 				.map(house -> PinnedListResponseDto.PinnedHouseDto.builder()
-						.houseId(house.getId())
+						.houseId(house.getHouseId())
 						.monthlyRent(house.calculateMonthlyRent())
 						.deposit(house.calculateDeposit())
 						.occupancyTypes(house.calculateOccupancyType())
@@ -55,7 +55,7 @@ public class HouseService {
 			final boolean isPinned = house.getPins().stream()
 					.anyMatch(pin -> pin.getUser().getId().equals(userId));
 			MoodHouseResponseDto.MoodHouseDto dto = MoodHouseResponseDto.MoodHouseDto.builder()
-					.houseId(house.getId())
+					.houseId(house.getHouseId())
 					.monthlyRent(house.calculateMonthlyRent())
 					.deposit(house.calculateDeposit())
 					.occupancyTypes(house.calculateOccupancyType())

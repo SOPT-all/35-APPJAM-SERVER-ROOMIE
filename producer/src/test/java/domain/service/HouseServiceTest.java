@@ -138,7 +138,7 @@ public class HouseServiceTest {
 							  String location, String locationDescription,
 							  boolean isPinned, int contractTerm, String mainImgUrl) {
 		House house = new House();
-		house.setId(id);
+		house.setHouseId(id);
 		house.setName("Sample House " + id);
 		house.setLatitude(37.5665 + id * 0.001); // 예제 좌표
 		house.setLongitude(126.978 + id * 0.001); // 예제 좌표
@@ -258,7 +258,7 @@ public class HouseServiceTest {
 
 	private House createMockHouse(Long houseId, String name, String location, String roomMood) {
 		House house = new House();
-		house.setId(houseId);
+		house.setHouseId(houseId);
 		house.setName(name);
 		house.setLocation(location);
 		house.setRoomMood(roomMood);
@@ -313,7 +313,7 @@ public class HouseServiceTest {
 		mockUser.setId(userId);
 
 		House mockHouse = new House();
-		mockHouse.setId(houseId);
+		mockHouse.setHouseId(houseId);
 
 		when(pinRepository.findByUserIdAndHouseId(userId, houseId)).thenReturn(Optional.empty());
 		when(userRepository.getReferenceById(userId)).thenReturn(mockUser);
@@ -358,7 +358,7 @@ public class HouseServiceTest {
 
 		// Mock House 객체 생성
 		House mockHouse = new House();
-		mockHouse.setId(houseId);
+		mockHouse.setHouseId(houseId);
 		mockHouse.setMainImgUrl("https://example.com/main.jpg");
 		mockHouse.setMainImgDescription("메인 이미지 상세설명");
 		mockHouse.setFacilityImgUrl("https://example.com/facility1.jpg https://example.com/facility2.jpg");

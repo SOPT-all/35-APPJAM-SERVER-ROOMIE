@@ -49,7 +49,7 @@ public class MapService {
 				final boolean isPinned = house.getPins().stream()
 						.anyMatch(pin -> pin.getUser().getId().equals(userId));
 				FilterResponseDto.HouseMapDto dto = FilterResponseDto.HouseMapDto.builder()
-						.houseId(house.getId())
+						.houseId(house.getHouseId())
 						.x(house.getLongitude())
 						.y(house.getLatitude())
 						.monthlyRent(house.calculateMonthlyRent())

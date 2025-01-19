@@ -37,7 +37,7 @@ public class UserService {
 			final boolean isPinned = house.getPins().stream()
 					.anyMatch(pin -> pin.getUser().getId().equals(userId));
 			HomeInfoResponseDto.RecentlyViewedHouseDto dto = HomeInfoResponseDto.RecentlyViewedHouseDto.builder()
-					.houseId(house.getId())
+					.houseId(house.getHouseId())
 					.monthlyRent(house.calculateMonthlyRent())
 					.deposit(house.calculateDeposit())
 					.occupancyTypes(house.calculateOccupancyType())
