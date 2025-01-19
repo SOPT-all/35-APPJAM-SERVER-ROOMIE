@@ -14,7 +14,15 @@ spring:
   jpa:
     properties:
       hibernate:
-        globally_quoted_identifiers: true
+        globally_quoted_identifiers: false
+  logging:
+    level:
+      org:
+        hibernate:
+          SQL: DEBUG
+          type:
+            descriptor:
+              sql: TRACE
   datasource:
     driver-class-name: ${SPRING_DATASOURCE_DRIVER_CLASS_NAME:org.h2.Driver}
     url: ${SPRING_DATASOURCE_URL:jdbc:h2:mem:testdb}
